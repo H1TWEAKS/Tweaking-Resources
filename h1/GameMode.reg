@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+
+; Ensures Windows Game Mode is enabled and sets default process priority for games.
+; This can help Windows prioritize game processes for better performance.
+
+[HKEY_CURRENT_USER\Software\Microsoft\GameBar]
+"AllowGameBar"=dword:00000001
+"GameDVR_Enabled"=dword:00000000 ; Disables Game DVR (background recording) if it causes issues
+
+[HKEY_CURRENT_USER\System\GameConfigStore]
+"GameDVR_Enabled"=dword:00000000 ; Disables Game DVR (background recording)
+"GameDVR_FSEBehaviorMode"=dword:00000002 ; Optimizes Full Screen Exclusive behavior
+"GameDVR_DXGIExclusiveMode"=dword:00000001 ; Ensures DXGI exclusive mode is preferred
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\GameMode]
+"AllowGameMode"=dword:00000001 ; Ensures Game Mode is enabled

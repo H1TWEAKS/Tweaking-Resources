@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+
+; Disables Nagle's Algorithm for all network adapters (requires finding GUIDs for specific application)
+; This applies TCPNoDelay and TcpAckFrequency to a common location.
+; For best results, you might need to apply these settings under
+; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{YOUR_NETWORK_ADAPTER_GUID}
+; for each specific network adapter you use for gaming.
+; You can find your adapter GUIDs by looking at the subkeys under the Interfaces key.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"TcpAckFrequency"=dword:00000001
+"TCPNoDelay"=dword:00000001
+
+; Optional: Also apply to MSMQ (Microsoft Message Queuing) parameters
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSMQ\Parameters]
+"TCPNoDelay"=dword:00000001

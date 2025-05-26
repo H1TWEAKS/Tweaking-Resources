@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+; Disables Power Throttling feature in Windows.
+; This ensures background processes are not throttled, potentially improving performance
+; for applications that rely on background tasks or for overall system responsiveness.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
+"PowerThrottlingOff"=dword:00000001
